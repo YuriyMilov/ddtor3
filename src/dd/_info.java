@@ -15,6 +15,9 @@ public class _info {
 		s = Jsoup.parse(s).text();
 
 		System.out.println(s);
+		
+		
+		//tets
 	}
 	
 	
