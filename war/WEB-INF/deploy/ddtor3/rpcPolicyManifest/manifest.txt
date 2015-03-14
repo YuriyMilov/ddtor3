@@ -1,0 +1,3 @@
+# Module ddtor3
+# RPC service class, partial path of RPC policy file
+dd.client.GreetingService, 3E6D4AE1C9B781CC9690F41016F9CBA7.gwt.rpc
