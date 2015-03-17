@@ -40,11 +40,7 @@ import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.Text;
 
 
-
-
 public class mm extends HttpServlet {
-	public static String slog = "";
-	public static String slog1 = "";
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
@@ -107,64 +103,6 @@ public class mm extends HttpServlet {
 		datastore.put(greeting);
 	}
 
-public static void sm_htm(String[] to, String subject, String body) {
-
-	Properties props = new Properties();
-	Session session = Session.getDefaultInstance(props, null);
-	Message msg = new MimeMessage(session);
-
-
-    try {
-    	msg.setFrom(new InternetAddress("admin@ddtor.com"));
-        InternetAddress[] toAddress = new InternetAddress[to.length];
-        // To get the array of addresses
-        for( int i = 0; i < to.length; i++ ) {
-            toAddress[i] = new InternetAddress(to[i]);
-        }
-        for( int i = 0; i < toAddress.length; i++) {
-        	msg.addRecipient(Message.RecipientType.TO, toAddress[i]);
-        }
-        msg.setSubject(subject);
-        MimeBodyPart textPart = new MimeBodyPart();
-		textPart.setContent(body, "text/html;charset=utf-8");
-		Multipart mp = new MimeMultipart();
-		mp.addBodyPart(textPart);
-		msg.setContent(mp);
-		try {
-			msg.setSubject(MimeUtility.encodeText(subject, "utf-8", "B"));
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        Transport.send(msg);
-        
-    }
-    catch (AddressException ae) {
-        ae.printStackTrace();
-    }
-    catch (MessagingException me) {
-        me.printStackTrace();
-    }
-}
-
-
-	public void send_mail(Multipart mp, String sadr, String subject, String sbody, String stxt)
-			throws Exception {
-		Properties props = new Properties();
-		Session session = Session.getDefaultInstance(props, null);
-		Message msg = new MimeMessage(session);
-		msg.setFrom(new InternetAddress("admin@ddtor.com",
-				"Kuka"));
-		msg.setSubject(subject);
-		msg.setText("привет опять\r\n");
-		//Multipart mp = new MimeMultipart();
-		MimeBodyPart textPart = new MimeBodyPart();
-		textPart.setContent(sbody, "text/html");
-		mp.addBodyPart(textPart);
-		msg.setContent(mp);
-		Transport.send(msg);
-	}
-	
-	private static final long serialVersionUID = 1L;
+private static final long serialVersionUID = 1L;
 
 }

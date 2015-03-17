@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gwt.user.server.Base64Utils;
 
-public class mmlink2 extends HttpServlet {
+public class rss_link extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -40,7 +40,6 @@ public class mmlink2 extends HttpServlet {
 		if (req.getParameter("subj") != null)
 			subj = req.getParameter("subj");
 
-		 
 		String sdata = "data null";
 		if (req.getParameter("data") != null) {
 			sdata = req.getParameter("data");
@@ -48,7 +47,7 @@ public class mmlink2 extends HttpServlet {
 			sdata = new String(data, Charset.forName("UTF-8"));
 			smhtm2a(subj, sdata);
 		}
- 
+
 		
 		String sh = req.getScheme() + "://" + req.getServerName() + ":"	+ req.getServerPort() + req.getContextPath();
 		String s= stkl.rfu_utf(sh+"/tmpl_mmlink2.html");	

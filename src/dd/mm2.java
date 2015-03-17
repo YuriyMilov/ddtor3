@@ -25,17 +25,16 @@ import javax.servlet.http.HttpServletResponse;
 
 
 public class mm2 extends HttpServlet {
-	public static String slog = "";
-	public static String slog1 = "";
-	public static String semailto = "k9992.tverskoy@blogger.com";
-	public static String semailfrom = "k999.quicklydone@gmail.com";
+
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		
 			String sh = req.getScheme() + "://" + req.getServerName() + ":"
 					+ req.getServerPort() + req.getContextPath();
-			String s=stkl.rfu_utf(sh+"/news");
+			
+			
+			String s=stkl.rfu_utf(sh+"/news")+"<br>"+stkl.rfu_utf(sh+"/rss");
 			Date dNow = new Date( );
 			
 			SimpleDateFormat ft =  new SimpleDateFormat ("HH:mm '(Мск)'");
@@ -45,7 +44,7 @@ public class mm2 extends HttpServlet {
 			subj="";
 			
 			if(s.length()>33 && !s.contains("Error")&& !s.contains("Exception:"))
-				sm_htm(new String[]{semailto},subj, s);
+				stkl.sm_htm(new String[]{_info.semailto},subj, s);
 			
 			
 			resp.setCharacterEncoding("UTF8"); 
@@ -63,6 +62,7 @@ public class mm2 extends HttpServlet {
 		doGet(req, resp);
 	}
 
+	/*
 
 public static void sm_htm(String[] to, String subject, String body) {
 
@@ -73,10 +73,10 @@ public static void sm_htm(String[] to, String subject, String body) {
 
     try {
     	try {
-			msg.setFrom(new InternetAddress(semailfrom,
+			msg.setFrom(new InternetAddress(_info.semailfrom,
 					"Kuka Tverskoy"));
 		} catch (UnsupportedEncodingException e1) {
-			msg.setFrom(new InternetAddress(semailfrom));
+			msg.setFrom(new InternetAddress(_info.semailfrom));
 		}
         InternetAddress[] toAddress = new InternetAddress[to.length];
         // To get the array of addresses
@@ -109,24 +109,10 @@ public static void sm_htm(String[] to, String subject, String body) {
     }
 }
 
-
-	public void send_mail(Multipart mp, String sadr, String subject, String sbody, String stxt)
-			throws Exception {
-		Properties props = new Properties();
-		Session session = Session.getDefaultInstance(props, null);
-		Message msg = new MimeMessage(session);
-		msg.setFrom(new InternetAddress(semailfrom,
-				"Kuka Tverskoy"));
-		msg.setSubject(subject);
-		msg.setText("привет опять\r\n");
-		//Multipart mp = new MimeMultipart();
-		MimeBodyPart textPart = new MimeBodyPart();
-		textPart.setContent(sbody, "text/html");
-		mp.addBodyPart(textPart);
-		msg.setContent(mp);
-		Transport.send(msg);
-	}
-	
+*/	
 	private static final long serialVersionUID = 1L;
 
+
 }
+	
+	

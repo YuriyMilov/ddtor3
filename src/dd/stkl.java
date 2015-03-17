@@ -15,6 +15,7 @@ import java.net.URLConnection;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.channels.Channels;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -581,6 +582,16 @@ public class stkl {
 		//greetings.remove(0);
 		
 		return bb;
+	}
+	
+	public static String get_date() {
+	   // SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
+		 SimpleDateFormat sdfDate = new SimpleDateFormat("dd-MM-yyyy");
+	    Date now = new Date();
+	    String s = sdfDate.format(now);
+	    
+	    s=s.replace("-01-", " января ").replace("-02-", " февраля ").replace("-03-", " марта ").replace("-04-", " апреля ").replace("-05-", " мая ").replace("-06-", " июня ").replace("-07-", " июня ").replace("-08-", " августа ").replace("-09-", " сентября ").replace("-10-", " октября ").replace("-11-", " ноября ").replace("-12-", " декабря ");
+	    return s;
 	}
 	
 

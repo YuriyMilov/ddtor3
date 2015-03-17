@@ -1,250 +1,315 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.5"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-  <!-- Servlets -->
-  
-  
-  <servlet>
-  <servlet-name>mmlink2</servlet-name>
-  <servlet-class>dd.mmlink2</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>mmlink2</servlet-name>
-  <url-pattern>/mmlink2</url-pattern>
-</servlet-mapping>
- 
- 
-  
-  
-  <servlet>
-  <servlet-name>mm</servlet-name>
-  <servlet-class>dd.mm</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>mm</servlet-name>
-  <url-pattern>/_ah/mail/*</url-pattern>
-</servlet-mapping>
- 
-   
-  <servlet>
-  <servlet-name>mm2</servlet-name>
-  <servlet-class>dd.mm2</servlet-class>
-</servlet>
-<servlet-mapping>
-  <servlet-name>mm2</servlet-name>
-  <url-pattern>/mm2</url-pattern>
-</servlet-mapping>
+	<!-- Servlets -->
 
-    
-   <servlet>
-    <servlet-name>xml_feed</servlet-name>
-    <servlet-class>dd.xml_feed</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>xml_feed</servlet-name>
-    <url-pattern>/xml_feed</url-pattern>
-  </servlet-mapping>
-        
-    
-   <servlet>
-    <servlet-name>mail</servlet-name>
-    <servlet-class>dd.mail</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>mail</servlet-name>
-    <url-pattern>/mail</url-pattern>
-  </servlet-mapping>
-        
-  <servlet>
-    <servlet-name>news</servlet-name>
-    <servlet-class>dd.news</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>news</servlet-name>
-    <url-pattern>/news</url-pattern>
-  </servlet-mapping>
-    
-   <servlet>
-    <servlet-name>js1</servlet-name>
-    <servlet-class>dd.js1</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>js1</servlet-name>
-    <url-pattern>/js1</url-pattern>
-  </servlet-mapping>
-  
-      <servlet>
-    <servlet-name>js2</servlet-name>
-    <servlet-class>dd.js2</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>js2</servlet-name>
-    <url-pattern>/js2</url-pattern>
-  </servlet-mapping>
-  
-  
-   <servlet>
-    <servlet-name>TestServlet</servlet-name>
-    <servlet-class>dd.TestServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>TestServlet</servlet-name>
-    <url-pattern>/TestServlet</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-    <servlet-name>qqmap</servlet-name>
-    <servlet-class>dd.qqmap</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>qqmap</servlet-name>
-    <url-pattern>/qqmap</url-pattern>
-  </servlet-mapping>
 
-  
-   <servlet>
-    <servlet-name>qq</servlet-name>
-    <servlet-class>dd.qq</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>qq</servlet-name>
-    <url-pattern>/qq</url-pattern>
-  </servlet-mapping>
+	<servlet>
+		<servlet-name>rss_cron</servlet-name>
+		<servlet-class>dd.rss_cron</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>rss_cron</servlet-name>
+		<url-pattern>/rss_cron</url-pattern>
+	</servlet-mapping>
 
-  
-   <servlet>
-    <servlet-name>ddp</servlet-name>
-    <servlet-class>dd.ddp</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>ddp</servlet-name>
-    <url-pattern>/ddp</url-pattern>
-  </servlet-mapping>
 
-  
-  
-    <servlet>
-    <servlet-name>post</servlet-name>
-    <servlet-class>dd.post</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>post</servlet-name>
-    <url-pattern>/post</url-pattern>
-  </servlet-mapping>
-  
-    
-    <servlet>
-    <servlet-name>qqq</servlet-name>
-    <servlet-class>dd.qqq</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>qqq</servlet-name>
-    <url-pattern>/qqq</url-pattern>
-  </servlet-mapping>
-  
-  
-  
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>dd.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/ddtor3/greet</url-pattern>
-  </servlet-mapping>  
-  
-  <servlet>
-    <servlet-name>ddf</servlet-name>
-    <servlet-class>dd.ddf</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>ddf</servlet-name>
-    <url-pattern>/ddf</url-pattern>
-  </servlet-mapping>
-  
- 
-  
-  <servlet>
-    <servlet-name>qqw</servlet-name>
-    <servlet-class>dd.qqw</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>qqw</servlet-name>
-    <url-pattern>/qqw</url-pattern>
-  </servlet-mapping>
-  
-  
-  <servlet>
-    <servlet-name>qqr</servlet-name>
-    <servlet-class>dd.qqr</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>qqr</servlet-name>
-    <url-pattern>/qqr</url-pattern>
-  </servlet-mapping>
-    
-  <servlet>
-    <servlet-name>bre</servlet-name>
-    <servlet-class>dd.bre</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>bre</servlet-name>
-    <url-pattern>/bre</url-pattern>
-  </servlet-mapping>
-  
-    <servlet>
-    <servlet-name>bre2</servlet-name>
-    <servlet-class>dd.bre2</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>bre2</servlet-name>
-    <url-pattern>/bre2</url-pattern>
-  </servlet-mapping>
-  
-   <servlet>
-    <servlet-name>owl</servlet-name>
-    <servlet-class>dd.owl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>owl</servlet-name>
-    <url-pattern>/owl</url-pattern>
-  </servlet-mapping>
-  
-  
-  <!-- Default page to serve -->
-  <welcome-file-list>
-    <welcome-file>Ddtor3.html</welcome-file>
-  </welcome-file-list>
+	<servlet>
+		<servlet-name>rss</servlet-name>
+		<servlet-class>dd.rss</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>rss</servlet-name>
+		<url-pattern>/rss</url-pattern>
+	</servlet-mapping>
 
-  <servlet>
-    <servlet-name>SystemServiceServlet</servlet-name>
-    <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
-    <init-param>
-      <param-name>services</param-name>
-      <param-value/>
-    </init-param>
-  </servlet>
 
-  <servlet-mapping>
-    <servlet-name>SystemServiceServlet</servlet-name>
-    <url-pattern>/_ah/spi/*</url-pattern>
-  </servlet-mapping>
+
+	<servlet>
+		<servlet-name>rss_add</servlet-name>
+		<servlet-class>dd.rss_add</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>rss_add</servlet-name>
+		<url-pattern>/rss_add</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>dt</servlet-name>
+		<servlet-class>dd.dt</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dt</servlet-name>
+		<url-pattern>/dt</url-pattern>
+	</servlet-mapping>
+	
+	
+
+	<servlet>
+		<servlet-name>mmlink</servlet-name>
+		<servlet-class>dd.mmlink2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mmlink</servlet-name>
+		<url-pattern>/mmlink</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>mmlink2</servlet-name>
+		<servlet-class>dd.mmlink2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mmlink2</servlet-name>
+		<url-pattern>/mmlink2</url-pattern>
+	</servlet-mapping>
+	
+	
+		
+	<servlet>
+		<servlet-name>link</servlet-name>
+		<servlet-class>dd.mmlink2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>link</servlet-name>
+		<url-pattern>/link</url-pattern>
+	</servlet-mapping>
+	
+
+
+
+	<servlet>
+		<servlet-name>mm</servlet-name>
+		<servlet-class>dd.mm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mm</servlet-name>
+		<url-pattern>/_ah/mail/*</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>mm2</servlet-name>
+		<servlet-class>dd.mm2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mm2</servlet-name>
+		<url-pattern>/mm2</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>xml_feed</servlet-name>
+		<servlet-class>dd.xml_feed</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>xml_feed</servlet-name>
+		<url-pattern>/xml_feed</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>mail</servlet-name>
+		<servlet-class>dd.mail</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>mail</servlet-name>
+		<url-pattern>/mail</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>news</servlet-name>
+		<servlet-class>dd.news</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>news</servlet-name>
+		<url-pattern>/news</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>js1</servlet-name>
+		<servlet-class>dd.js1</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>js1</servlet-name>
+		<url-pattern>/js1</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>js2</servlet-name>
+		<servlet-class>dd.js2</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>js2</servlet-name>
+		<url-pattern>/js2</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>dd.TestServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/TestServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>qqmap</servlet-name>
+		<servlet-class>dd.qqmap</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>qqmap</servlet-name>
+		<url-pattern>/qqmap</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>qq</servlet-name>
+		<servlet-class>dd.qq</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>qq</servlet-name>
+		<url-pattern>/qq</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ddp</servlet-name>
+		<servlet-class>dd.ddp</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ddp</servlet-name>
+		<url-pattern>/ddp</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>post</servlet-name>
+		<servlet-class>dd.post</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>post</servlet-name>
+		<url-pattern>/post</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>qqq</servlet-name>
+		<servlet-class>dd.qqq</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>qqq</servlet-name>
+		<url-pattern>/qqq</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>greetServlet</servlet-name>
+		<servlet-class>dd.server.GreetingServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>greetServlet</servlet-name>
+		<url-pattern>/ddtor3/greet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ddf</servlet-name>
+		<servlet-class>dd.ddf</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ddf</servlet-name>
+		<url-pattern>/ddf</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>qqw</servlet-name>
+		<servlet-class>dd.qqw</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>qqw</servlet-name>
+		<url-pattern>/qqw</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>qqr</servlet-name>
+		<servlet-class>dd.qqr</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>qqr</servlet-name>
+		<url-pattern>/qqr</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>bre</servlet-name>
+		<servlet-class>dd.bre</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>bre</servlet-name>
+		<url-pattern>/bre</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>bre2</servlet-name>
+		<servlet-class>dd.bre2</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>bre2</servlet-name>
+		<url-pattern>/bre2</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>owl</servlet-name>
+		<servlet-class>dd.owl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>owl</servlet-name>
+		<url-pattern>/owl</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>Ddtor3.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>SystemServiceServlet</servlet-name>
+		<servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+		<init-param>
+			<param-name>services</param-name>
+			<param-value />
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SystemServiceServlet</servlet-name>
+		<url-pattern>/_ah/spi/*</url-pattern>
+	</servlet-mapping>
 
 </web-app>
