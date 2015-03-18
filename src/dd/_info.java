@@ -17,6 +17,8 @@ import com.google.gwt.user.server.Base64Utils;
 
 public class _info {
 	// GAE ddtor3 admin at ddtor quick-0
+	// github.com/YuriyMilov
+	
 	public static String semailto = "k9992.tverskoy@blogger.com";
 	public static String semailfrom = "k999.quicklydone@gmail.com";
 	public static String blobkey = "";
