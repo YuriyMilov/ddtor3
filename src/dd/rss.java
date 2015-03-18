@@ -30,7 +30,7 @@ public class rss extends HttpServlet {
 		resp.setContentType("text/html; charset=utf-8");
 		
 		String sid="Text";
-		String s = get_datastore_rss(3,sid);
+		String s = get_datastore_rss(10,sid);
 		
 		
 		PrintWriter out = resp.getWriter();
@@ -49,37 +49,17 @@ public class rss extends HttpServlet {
 				FetchOptions.Builder.withLimit(i));
 		String s = "",s2="";
 		for (Entity greeting : greetings) {
-			byte[] bb = ((Text) greeting.getProperty("content")).getValue()
-					.getBytes("utf8");
-			s2=pars_rss(new String(bb, "UTF-8"));
-			if (!s2.contains("qqq_qqq")) 
+			//byte[] bb = ((Text) greeting.getProperty("content")).getValue().getBytes("utf8");	
+			//s2 = new String(bb, "UTF-8");
+			
+				s2=((Text) greeting.getProperty("content")).getValue();
 				s = s + s2 + "<br/>";
 			datastore.delete(greeting.getKey());
 		}
 		return s;
 	}
 
-	public static String pars_rss(String s) {
 
-		byte[] data = s.getBytes(Charset.forName("UTF-8"));
-
-		String scoded = Base64Utils.toBase64(data);
-
-		s = Jsoup.parse(s).text();
-		if (s.length() > 444)
-			s = s.substring(0,444);
-		
-		if (s.length() > 55)
-			s = "<form action=\"http://bb.ddtor.com/mmlink2\" method=\"post\"> "
-				+ "<button type=submit name=qq>&nbsp;</button>&nbsp;"
-				+ s + "<input type=hidden value=\"" + scoded + "\" name=data>"
-				+ "...<button type=submit name=qq>></button></form><hr>";		
-			
-		else
-			s = "qqq_qqq";
-		return s;
-
-	}
 
 
 }

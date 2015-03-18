@@ -34,7 +34,7 @@ public class mm2 extends HttpServlet {
 					+ req.getServerPort() + req.getContextPath();
 			
 			
-			String s=stkl.rfu_utf(sh+"/news")+"<br>"+stkl.rfu_utf(sh+"/rss");
+			String s=stkl.rfu_utf(sh+"/news")+stkl.rfu_utf(sh+"/rss");
 			Date dNow = new Date( );
 			
 			SimpleDateFormat ft =  new SimpleDateFormat ("HH:mm '(Мск)'");

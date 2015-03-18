@@ -29,8 +29,7 @@ public class news extends HttpServlet {
 			throws ServletException, IOException {
 		resp.setContentType("text/html; charset=utf-8");
 		String s = get_datastore_s(40);
-		
-		
+
 		PrintWriter out = resp.getWriter();
 		out.write(s);
 		out.flush();
@@ -45,12 +44,12 @@ public class news extends HttpServlet {
 				Query.SortDirection.DESCENDING);
 		List<Entity> greetings = datastore.prepare(query).asList(
 				FetchOptions.Builder.withLimit(i));
-		String s = "",s2="";
+		String s = "", s2 = "";
 		for (Entity greeting : greetings) {
 			byte[] bb = ((Text) greeting.getProperty("content")).getValue()
 					.getBytes("utf8");
-			s2=par(new String(bb, "UTF-8"));
-			if (!s2.contains("qqq_qqq")) 
+			s2 = par(new String(bb, "UTF-8"));
+			if (!s2.contains("qqq_qqq"))
 				s = s + s2 + "<br/>";
 			datastore.delete(greeting.getKey());
 		}
@@ -66,16 +65,15 @@ public class news extends HttpServlet {
 		} else
 			slink = " slink ";
 
+		//s = s.replaceAll("&amp;", "&").replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&quot;", "\"");
 		s = s.replace("&lt;", "<").replace("&gt;", ">");
-		s = cut_first(s, "<table", "</table>");
+		String s1 = get_first(s, "<table", "</table>");
+		s1=Jsoup.parse(s1).text().trim();	
+		
 		s = cut_last(s, "<div", "</div>");
 		s = cut_last(s, "<div", "</div>");
-		s = cut_last(s, "<!--", "-->");
-
-		// String s1[] = s.split("<tbody");
-		// int i = s1.length;
-		// if (i > 1)
-		// s = cut_first(s, "<tbody", "</tbody>");
+		s = cut_last(s, "<!--", "-->");	
+		
 		String s2[] = s.split("<td");
 		int i = s2.length;
 		if (i > 1)
@@ -88,9 +86,6 @@ public class news extends HttpServlet {
 		if (s.contains("поделился с вами записью из ленты пользователя"))
 			s = cut_first(s, "<table", "</table>");
 
-		
-		
-		
 		if (!s.contains("Перейти к записи")) {
 			if (slink.contains(" style=")) {
 				slink = slink.substring(0, slink.indexOf(" style="));
@@ -115,25 +110,27 @@ public class news extends HttpServlet {
 
 		s = Jsoup.parse(s).text();
 
-		s=rem_all_sub(s, "http", " ");
-		s=rem_all_sub(s, "//", " ");
-		s=rem_all_sub(s, "#", " ");
+		s = rem_all_sub(s, "http", " ");
+		s = rem_all_sub(s, "//", " ");
+		s = rem_all_sub(s, "#", " ");
 		s = s.replace("Перейти к записи", "");
 		s = s.replace("Посмотреть на Google+", "");
-		
 
-		if (s.length() > 55)
-			s = " <form action=\"http://ddtor3.appspot.com/mmlink2\" method=\"post\"> "
-					+ "<button type=submit name=qq>&nbsp;</button>&nbsp;"
-					+ s + "<input type=hidden value=\"" + scoded + "\" name=data>"
-					+ "...<button type=submit name=qq>></button></form><hr>";
-		else
+		String sfid=String.valueOf(Math.random());
+		if (s.length() > 55) {
+			s = "<form id=\"myform"+sfid+"\" action=\"http://bb.ddtor.com/mmlink2\" method=\"post\"  target=\"_blank\">"
+					+ s +  "<input type=hidden value=\""+ scoded + "\" name=data></form><hr>";
+
+			s=s.replace(s1, "");
+			
+			s = "<a href=\"javascript: document.getElementById('myform"+sfid+"').submit();\"><b>"+s1+"</b></a><br/>" + s;
+		} else
 			s = "qqq_qqq";
 
 		return s;
 
 	}
-	
+
 	public static String rem_all_sub(String s, String s1, String s2) {
 		int i = s.indexOf(s1);
 		int j = s.indexOf(s2);
@@ -148,12 +145,14 @@ public class news extends HttpServlet {
 			s = "";
 			for (String ss : sss) {
 				i = ss.indexOf(s2);
-				if(i>-1)
-					s = s + ss.substring(i+s2.length());
+				if (i > -1)
+					s = s + ss.substring(i + s2.length());
 			}
 		}
-		return s3+s;
+		return s3 + s;
 	}
+
+
 
 	public static String cut_first(String s, String s1, String s2) {
 		int i1 = s.indexOf(s1);
@@ -169,10 +168,26 @@ public class news extends HttpServlet {
 		int i1 = s.lastIndexOf(s1);
 		if (i1 > 0)
 			s1 = s.substring(i1);
-		int i2 = s1.indexOf(s2) + s2.length();
+		
+
+		int i2 = s1.lastIndexOf(s2) + s2.length();
 		if (i1 > 0 && i1 < s.length() && i2 > 0 && i2 < s1.length())
 			s = s.substring(0, i1) + s1.substring(i2);
 		return s;
 	}
+	
+	
+	public static String get_first(String s, String s1, String s2) {
+		int i1 = s.indexOf(s1);
+		if (i1 > 0)
+			s = s.substring(i1);
 
+		int i2 = s.indexOf(s2) + s2.length();
+		if (i2 > 0)
+			s = s.substring(0, i2);
+
+		s = Jsoup.parse(s).text();
+		
+		return s;
+	}
 }

@@ -33,7 +33,7 @@ public class dt extends HttpServlet {
 			throws ServletException, IOException {
 		resp.setContentType("text/html; charset=utf-8");
 		
-		String s = "на " + stkl.get_date() + "года"; 
+		String s = "на " + stkl.get_date() + " года"; 
 	
 		PrintWriter writer = resp.getWriter();
 		resp.setContentType("text/event-stream");
