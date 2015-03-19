@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.jsoup.Jsoup;
 
-import rss.Feed;
-import rss.FeedMessage;
-import rss.RSSFeedParser;
 
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;

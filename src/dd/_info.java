@@ -1,12 +1,22 @@
 package dd;
 
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+import org.apache.http.HttpEntity;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
 
+import com.google.api.client.http.HttpResponse;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
@@ -23,7 +33,31 @@ public class _info {
 	public static String semailfrom = "k999.quicklydone@gmail.com";
 	public static String blobkey = "";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		
+		/*
+		 * Create the POST request
+		 */
+		HttpClient httpClient = new DefaultHttpClient();
+		HttpPost httpPost = new HttpPost("http://example.com/");
+		// Request parameters and other properties.
+		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add(new BasicNameValuePair("user", "Bob"));
+	
+		    httpPost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
+		
+		/*
+		 * Execute the HTTP Request
+		 */
+		
+		    org.apache.http.HttpResponse response = httpClient.execute(httpPost);
+		    HttpEntity respEntity = response.getEntity();
+
+		    if (respEntity != null) {
+		        // EntityUtils to get the response content
+		        String content =  EntityUtils.toString(respEntity);
+		    }
+		
 
 		String s = "<p> <span> foo </span> <em> bar <a> foobar </a> baz </em> </p>";
 		// s=stkl.rfu_utf("http://www.ddtor.com");

@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import rss.Feed;
-import rss.FeedMessage;
-import rss.RSSFeedParser;
+
 
 public class js1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -69,7 +67,7 @@ public class js1 extends HttpServlet {
  * type="text/javascript"> function start() { var eventSource = new
  * EventSource("TestServlet"); eventSource.onmessage = function(event) {
  * document.getElementById('foo').innerHTML =
- * document.getElementById('foo').innerHTML + " яя<br/>фф "+event.data; }; }
+ * document.getElementById('foo').innerHTML + " Ñ�Ñ�<br/>Ñ„Ñ„ "+event.data; }; }
  * </script> </head> <body onload="start()"> Time: <span id="foo"></span>
  * </body> </html>
  */

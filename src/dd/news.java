@@ -108,25 +108,34 @@ public class news extends HttpServlet {
 		byte[] data = s.getBytes(Charset.forName("UTF-8"));
 		String scoded = Base64Utils.toBase64(data);
 
+		s=s.replace("<br/>","_11/_");
+		
 		s = Jsoup.parse(s).text();
+
 
 		s = rem_all_sub(s, "http", " ");
 		s = rem_all_sub(s, "//", " ");
 		s = rem_all_sub(s, "#", " ");
 		s = s.replace("Перейти к записи", "");
 		s = s.replace("Посмотреть на Google+", "");
-
+		s = s.replace(s1, "");
+		s=s.replace(s1, "");
+		if(s.lastIndexOf("_11/_")==s.length()-5)
+			s=s.substring(0,s.length()-5);
+		
 		String sfid=String.valueOf(Math.random());
-		if (s.length() > 55) {
-			s = "<form id=\"myform"+sfid+"\" action=\"http://bb.ddtor.com/mmlink2\" method=\"post\"  target=\"_blank\">"
-					+ s +  "<input type=hidden value=\""+ scoded + "\" name=data></form><hr>";
+		
+		if (s.length() > 55) {			
 
-			s=s.replace(s1, "");
+			s = "<b>G+чир:</b> " + s + "<form id=\"myform"+sfid+"\" action=\"http://bb.ddtor.com/mmlink2\" method=\"post\"  target=\"_blank\">"
+					 +  "<input type=hidden value=\""+ scoded + "\" name=data></form> <a href=\"javascript: document.getElementById('myform"+sfid+"').submit();\"><b> >>> </b></a><hr/>";
+		
 			
-			s = "<a href=\"javascript: document.getElementById('myform"+sfid+"').submit();\"><b>"+s1+"</b></a><br/>" + s;
 		} else
 			s = "qqq_qqq";
-
+		
+		
+		s = s.replace("_br/_", "<br/>");		
 		return s;
 
 	}

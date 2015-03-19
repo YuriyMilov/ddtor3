@@ -8,9 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import rss.Feed;
-import rss.FeedMessage;
-import rss.RSSFeedParser;
 
 public class xml_feed extends HttpServlet {
 	private static final long serialVersionUID = 1L;

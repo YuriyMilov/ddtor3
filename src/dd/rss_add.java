@@ -156,7 +156,7 @@ public class rss_add extends HttpServlet {
 					+ scoded
 					+ "\" name=data></form><hr>";
 
-	s = "<a href=\"javascript: document.getElementById('myform"+sfid+"').submit();\"><b>"+name+": "+title+"</b></a><br/>" + s;
+	s = "<a href=\"javascript: document.getElementById('myform"+sfid+"').submit();\"><b>"+name+"</a><br/>"+title+":</b> " + s;
 
 		return s;
 

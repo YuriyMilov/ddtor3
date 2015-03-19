@@ -11,10 +11,13 @@ import java.io.Writer;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -25,6 +28,18 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+
+
 
 import com.google.appengine.api.blobstore.BlobKey;
 import com.google.appengine.api.blobstore.BlobstoreService;
@@ -58,16 +73,17 @@ public class ddf extends HttpServlet {
 		}
 		if (s.equals("2")) {
 			s = req.getParameter("text");
-			s="http://owl.cs.manchester.ac.uk/converter/convert?ontology="+s+"&format=OWL/XML";
-			s=rfu(s);
+			s=stkl.rfu_utf(s);
 			
-			s = get_ape(
-					"http://attempto.ifi.uzh.ch/service/owl_verbalizer/owl_to_ace",
-					"xml=" + s + "&format=ace");
-			//s=post("http://attempto.ifi.uzh.ch/service/owl_verbalizer/owl_to_ace",URLEncoder.encode("xml="+s+"&format=ace","UTF-8"));
+			
+s="<html>Converter <form action=\"http://mowl-power.cs.man.ac.uk:8080/converter/convert\" method=post>" 
+		+"<pre><textarea rows=\"44\" cols=\"111\" name=\"ontology\">"+s+"</textarea></pre>"
+		+"<input type=hidden name=\"format\" value=\"OWL/XML\"/><br/>"
+		+ "<input type='submit' value='Convert'/></form><html>";		
 		}
 		
-		s="<html><input type=button onClick=\"location.href='/Ddtor3.html'\" value='Back'><br/><pre>"+s + "</pre><br/><br/></html>";
+		
+		//s="<html><input type=button onClick=\"location.href='/Ddtor3.html'\" value='Back'><br/><pre>"+s + "</pre><br/><br/></html>";
 		
 		PrintWriter out = resp.getWriter();
 		out.write(s);
