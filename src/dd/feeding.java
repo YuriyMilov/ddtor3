@@ -1,5 +1,7 @@
 package dd;
 
-public class feeding {
+public class feeding extends Thread{
+	
+	
 
 }

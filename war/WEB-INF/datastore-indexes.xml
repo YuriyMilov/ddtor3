@@ -2,8 +2,17 @@
 <datastore-indexes
   autoGenerate="true">
 
-    <datastore-index kind="Text" ancestor="true" source="manual">
+    <datastore-index kind="RSS" ancestor="true" source="manual">
+        <property name="date" direction="desc"/>
+    </datastore-index>
+        
+     <datastore-index kind="G+" ancestor="true" source="manual">
         <property name="date" direction="desc"/>
     </datastore-index>
     
+
+     <datastore-index kind="File1" ancestor="true" source="manual">
+        <property name="date" direction="desc"/>
+    </datastore-index>
+     
 </datastore-indexes>

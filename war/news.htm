@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link type="text/css" rel="stylesheet" href="Ddtor3.css">
+<title>Рики</title>
+<script type="text/javascript" language="javascript" src="riki/riki.nocache.js"></script>
+<script> function setupEventSource() {
+    	new EventSource("/sse").onmessage = function(event) {
+    		document.getElementById("output").innerHTML = event.data;
+    		};    	
+    	}
+ </script>
+</head>
+<body onload="setupEventSource()">
+
+	<!-- OPTIONAL: include this if you want history support -->
+	<iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1'
+		style="position: absolute; width: 0; height: 0; border: 0"></iframe>
+
+	<!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+	<noscript>
+		<div
+			style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+			без JavaScript это не работает...</div>
+	</noscript>
+
+<div id="output"></div>
+
+
+</body>
+</html>
+
+<!DOCTYPE HTML>
+<html><meta charset='utf-8'>
+<head>
+<script> 
+function qq() {
+new EventSource('/news?3').onmessage = function(event){
+document.getElementById('output').innerHTML = event.data };
+}
+</script>
+</head>
+
+<body onload='qq();'>
+<div id='output'><!-- qqq -->
+</div></body></html>

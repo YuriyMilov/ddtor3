@@ -147,7 +147,7 @@ public class qqw extends HttpServlet {
 				
 				s=s.substring(10).replace(">", "");
 				
-				_info.blobkey = s;
+				//_info.blobkey = s;
 				
 				//BlobstoreService blobStoreService = BlobstoreServiceFactory
 				//		.getBlobstoreService();

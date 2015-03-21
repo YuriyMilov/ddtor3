@@ -49,7 +49,7 @@ public class qqr extends HttpServlet {
 			s="";
 			s=rfu_utf(sh+"/qqw?1111");
 			}
-			s=_info.blobkey;
+			//s=_info.blobkey;
 			
 			s = rf(s);
 		
@@ -129,7 +129,7 @@ public class qqr extends HttpServlet {
 			
 //			s= "AMIfv94Yx1ma9jzkLVYXdf1-eMteBU3DCN1yF0cTQjqpI1KX9Sop-m2WQ68_UizdLF4nfoDeHAKJNHmA0XVTrbDYZWO9o59mkkWWqqkLPrGgseyt_SODAxHqgwi2n0aGT0MT9TjDL9ixlQLMq8zlpsV8yD1Q7ufIyA";
 			
-			s=_info.blobkey;
+			//s=_info.blobkey;
 			
 			//.substring(10);
 			//int i = s.length();

@@ -46,7 +46,7 @@ public class mmlink2 extends HttpServlet {
 			sdata = req.getParameter("data");
 			byte[] data = Base64Utils.fromBase64(sdata);
 			sdata = new String(data, Charset.forName("UTF-8"));
-			smhtm2a(subj, sdata);
+			//smhtm2a(subj, sdata);
 		}
  
 		
@@ -84,7 +84,7 @@ public class mmlink2 extends HttpServlet {
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(
 					"admins"));
 			
-			subject="Избранные сообщения для просмотра и комментариев " + stkl.get_date() + "года";;
+			subject="Избранные сообщения для просмотра и комментариев " + stkl.get_date_rus() + "года";;
 				
 			message.setSubject(subject,"UTF-8");
 			MimeBodyPart textPart = new MimeBodyPart();

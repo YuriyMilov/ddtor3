@@ -7,6 +7,63 @@
 
 
 	<servlet>
+		<servlet-name>fed</servlet-name>
+		<servlet-class>dd.fed</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>fed</servlet-name>
+		<url-pattern>/fed</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>mmnov</servlet-name>
+		<servlet-class>dd.mmnov</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mmnov</servlet-name>
+		<url-pattern>/mmnov</url-pattern>
+	</servlet-mapping>
+
+		<servlet>
+		<servlet-name>f1e</servlet-name>
+		<servlet-class>dd.f1_edit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>f1e</servlet-name>
+		<url-pattern>/f1e</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>f1c</servlet-name>
+		<servlet-class>dd.f1_clear</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>f1c</servlet-name>
+		<url-pattern>/f1c</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		
+		
+		<servlet-name>f1w</servlet-name>
+		<servlet-class>dd.f1_write</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>f1w</servlet-name>
+		<url-pattern>/f1w</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>f1r</servlet-name>
+		<servlet-class>dd.f1_read</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>f1r</servlet-name>
+		<url-pattern>/f1r</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name>rss_cron</servlet-name>
 		<servlet-class>dd.rss_cron</servlet-class>
 	</servlet>
@@ -152,16 +209,7 @@
 	</servlet-mapping>
 
 
-	<servlet>
-		<servlet-name>TestServlet</servlet-name>
-		<servlet-class>dd.TestServlet</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>TestServlet</servlet-name>
-		<url-pattern>/TestServlet</url-pattern>
-	</servlet-mapping>
-
+	
 	<servlet>
 		<servlet-name>qqmap</servlet-name>
 		<servlet-class>dd.qqmap</servlet-class>

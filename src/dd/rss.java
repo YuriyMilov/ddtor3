@@ -27,39 +27,24 @@ public class rss extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		resp.setContentType("text/html; charset=utf-8");
+	String s = stkl.rss;
 		
-		String sid="Text";
-		String s = get_datastore_rss(10,sid);
+		if (!s.contains("http"))
+			s = stkl.fir("rss");
 		
-		
-		PrintWriter out = resp.getWriter();
-		out.write(s);
-		out.flush();
-		out.close();
-	}
-
-	public static String get_datastore_rss(int i,String sid) throws IOException {
-		DatastoreService datastore = DatastoreServiceFactory
-				.getDatastoreService();
-		Key guestbookKey = KeyFactory.createKey(sid, "rss_txt");
-		Query query = new Query(sid, guestbookKey).addSort("date",
-				Query.SortDirection.DESCENDING);
-		List<Entity> greetings = datastore.prepare(query).asList(
-				FetchOptions.Builder.withLimit(i));
-		String s = "",s2="";
-		for (Entity greeting : greetings) {
-			//byte[] bb = ((Text) greeting.getProperty("content")).getValue().getBytes("utf8");	
-			//s2 = new String(bb, "UTF-8");
-			
-				s2=((Text) greeting.getProperty("content")).getValue();
-				s = s + s2 + "<br/>";
-			datastore.delete(greeting.getKey());
+		String[] sss = s.trim().split("http");
+		s = "http" + sss[stkl.get_random_number(1, sss.length - 1)];
+		String s1=s;
+		try{
+			s=_info.get_rrss(s);
+			stkl.mail = s + "\r\n" + stkl.mail;
+		}catch(Exception e){
+			s="<a href=\""+s1+"\">"+s1 +" </a> : Не могу прочитать RSS :-( ";
+			stkl.mail = s + "\r\n" + stkl.mail;
 		}
-		return s;
+		
+		resp.sendRedirect("http://www.ddtor.com/");
 	}
-
-
 
 
 }

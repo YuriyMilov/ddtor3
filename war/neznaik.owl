@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://127.0.0.1:8888/rff?83.owl#"
+     xml:base="http://127.0.0.1:8888/rff?83.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://127.0.0.1:8888/rff?83.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://127.0.0.1:8888/rff?83.owl#выращивает -->
+
+    <owl:ObjectProperty rdf:about="http://127.0.0.1:8888/rff?83.owl#выращивает"/>
+    
+
+
+    <!-- http://127.0.0.1:8888/rff?83.owl#живет_справа_от -->
+
+    <owl:ObjectProperty rdf:about="http://127.0.0.1:8888/rff?83.owl#живет_справа_от"/>
+    
+
+
+    <!-- http://127.0.0.1:8888/rff?83.owl#играет_на -->
+
+    <owl:ObjectProperty rdf:about="http://127.0.0.1:8888/rff?83.owl#играет_на"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://127.0.0.1:8888/rff?83.owl#выращивает_Розы -->
+
+    <owl:Class rdf:about="http://127.0.0.1:8888/rff?83.owl#выращивает_Розы">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://127.0.0.1:8888/rff?83.owl#выращивает"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Розы"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://127.0.0.1:8888/rff?83.owl#живет_справа_от"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://127.0.0.1:8888/rff?83.owl#играет_на"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Баяне"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://127.0.0.1:8888/rff?83.owl#кто_Незнайка -->
+
+    <owl:Class rdf:about="http://127.0.0.1:8888/rff?83.owl#кто_Незнайка">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Незнайка"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://127.0.0.1:8888/rff?83.owl#живет_справа_от"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Пончик"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Незнайка"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://127.0.0.1:8888/rff?83.owl#кто_Пончик -->
+
+    <owl:Class rdf:about="http://127.0.0.1:8888/rff?83.owl#кто_Пончик">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Пончик"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://127.0.0.1:8888/rff?83.owl#играет_на"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:oneOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Баяне"/>
+                                </owl:oneOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Пончик"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://127.0.0.1:8888/rff?83.owl#Баяне -->
+
+    <owl:NamedIndividual rdf:about="http://127.0.0.1:8888/rff?83.owl#Баяне"/>
+    
+
+
+    <!-- http://127.0.0.1:8888/rff?83.owl#Незнайка -->
+
+    <owl:NamedIndividual rdf:about="http://127.0.0.1:8888/rff?83.owl#Незнайка"/>
+    
+
+
+    <!-- http://127.0.0.1:8888/rff?83.owl#Пончик -->
+
+    <owl:NamedIndividual rdf:about="http://127.0.0.1:8888/rff?83.owl#Пончик"/>
+    
+
+
+    <!-- http://127.0.0.1:8888/rff?83.owl#Розы -->
+
+    <owl:NamedIndividual rdf:about="http://127.0.0.1:8888/rff?83.owl#Розы"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Баяне"/>
+            <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Незнайка"/>
+            <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Пончик"/>
+            <rdf:Description rdf:about="http://127.0.0.1:8888/rff?83.owl#Розы"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.4) http://owlapi.sourceforge.net -->

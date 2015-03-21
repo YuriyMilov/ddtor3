@@ -83,7 +83,7 @@ public class rss_link extends HttpServlet {
 			message.addRecipient(Message.RecipientType.TO, new InternetAddress(
 					"admins"));
 			
-			subject="Избранные сообщения для просмотра и комментариев " + stkl.get_date() + "года";;
+			subject="Избранные сообщения для просмотра и комментариев " + stkl.get_date_rus() + "года";;
 				
 			message.setSubject(subject,"UTF-8");
 			MimeBodyPart textPart = new MimeBodyPart();

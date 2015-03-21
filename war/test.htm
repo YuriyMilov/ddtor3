@@ -2,52 +2,56 @@
 <html>
 <meta charset="utf-8">
 <head>
-<style>
-a:link {
-	color: #99CCFF;
-}
 
-a:visited {
-	color: #99CCFF;
-}
-
-a:hover {
-	color: #FF00FF;
-}
-
-a:active {
-	color: #99CCFF;
-}
-
-body {
-	color: #E6E6E6;
-}
-</style>
-
-<script type="text/javascript">
-	function js1() {
-		var event1 = new EventSource("js1");
-		event1.onmessage = function(event1) {
-			var s = document.getElementById('foo').innerHTML + event1.data;
-			if (s.length < 5000)
-				document.getElementById('foo').innerHTML = s;
-			else {
-				s = event1.data;
-				document.getElementById('foo').innerHTML = s;
-			}
-		};
-	}
-</script>
+<script> function qq() {
+    	new EventSource("/TestServlet").onmessage = function(event) {
+    		document.getElementById("output").innerHTML = event.data;
+    		};    	
+    	}
+ </script> 
 </head>
-<body onload="js1();">
-
-	<table style="background: url(uz2.jpg) no-repeat 0 0;">
-		<tr height=700 valign=top>
-			<td width=720  valign=top><span id="foo">qqqqqqqq </span></td>
-		</tr>
-	</table>
-
-http://ontolog.cim3.net/cgi-bin/wiki.pl?YuriyMilov
+<body onload="qq();">
+<div id="output" style="width:100%"></div>
 
 </body>
 </html>
+
+<!-- 
+<div align=center>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2500695075596096"
+     data-ad-slot="1013034565"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+<div style="background-color:#eeeeee;color:#4573A3;font-family: Arial;font-size:13px;">
+<script>
+function myFunction3() {
+    document.getElementById("giframe3").src =document.getElementById("giframe3").src;
+}
+</script>
+<form id='myform_new_rss' action="http://bb.ddtor.com/mmnov" method="post" target="_blank">
+
+<hr/>
+</form>
+</div>
+
+<div style="background-color:white;color:#4573A3;">
+
+<iframe id="giframe3" src="http://bb.ddtor.com/fed?stkl.body" scrolling="auto"
+  frameborder="0"
+  width="100%"
+  height="555px">
+
+</iframe>
+
+</div>
+
+<div><hr/></div>
+
+ -->
